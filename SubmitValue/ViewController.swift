@@ -27,6 +27,11 @@ class ViewController: UIViewController {
     // 자동 갱신 여부가 바뀔 때마다 호출되는 메소드
     @IBAction func onSwitch(_ sender: UISwitch) {
         
+        // 옵셔널 캐스팅
+        //guard let obj = sender as? UISwitch else {
+        //    return
+        //}
+        
         if (sender.isOn == true) {
             self.isUpdateText.text = "갱신함"
         } else {
@@ -37,12 +42,25 @@ class ViewController: UIViewController {
     // 갱신 주기가 바뀔 때마다 호출되는 메소드
     @IBAction func onStepper(_ sender: UIStepper) {
         
+        // 강제 캐스팅
+        //let obj = sender as! UIStepper
+        
         let value = Int(sender.value)
         self.intervalText.text = "\(value)분 마다."
         
-        
-        
     }
+    
+    @IBAction func onSubmit(_ sender: Any) {
+        
+        // VC2의 인스턴스 생성
+        guard let rvc = self.storyboard?.instantiateViewController(identifier: "RVC") as? ResultViewController else {
+            
+            return
+        }
+        
+        // 값을 전달하는 과정을 작성.
+    }
+    
     
 
 }
