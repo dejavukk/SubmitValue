@@ -14,7 +14,6 @@ class ViewController: UIViewController {
     @IBOutlet var email: UITextField!
     @IBOutlet var isUpdate: UISwitch!
     @IBOutlet var interval: UIStepper!
-    
     @IBOutlet var isUpdateText: UILabel!
     @IBOutlet var intervalText: UILabel!
     
@@ -50,10 +49,18 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func onSubmit(_ sender: Any) {
+    @IBAction func onPerformSegue(_ sender: Any) {
         
+        self.performSegue(withIdentifier: "ManualSubmit", sender: self)
+        
+    }
+    
+    // 메소드 변경
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let dest = segue.destination
         // VC2의 인스턴스 생성
-        guard let rvc = self.storyboard?.instantiateViewController(identifier: "RVC") as? ResultViewController else {
+        guard let rvc = dest as? ResultViewController else {
             
             return
         }
@@ -62,12 +69,8 @@ class ViewController: UIViewController {
         rvc.paramEmail = self.email.text! // 이메일
         rvc.paramUpdate = self.isUpdate.isOn // 자동갱신 여부
         rvc.paramInterval = self.interval.value // 갱신주기
-        
-        // 화면이동
-        self.present(rvc, animated: true)
-        
-        
     }
+    
     
     
 

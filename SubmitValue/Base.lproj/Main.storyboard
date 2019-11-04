@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--설정-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SubmitValue" customModuleProvider="target" sceneMemberID="viewController">
@@ -70,25 +70,24 @@
                                     <action selector="onStepper:" destination="BYZ-38-t0r" eventType="valueChanged" id="TP1-5n-KCK"/>
                                 </connections>
                             </stepper>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Erf-et-dch">
-                                <rect key="frame" x="172" y="391" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="제출"/>
-                                <connections>
-                                    <action selector="onSubmit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DrM-jw-e03"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="50g-MX-0Fz"/>
+                    <navigationItem key="navigationItem" title="설정" id="50g-MX-0Fz">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="SXl-Qh-rWd">
+                            <connections>
+                                <action selector="onPerformSegue:" destination="BYZ-38-t0r" id="fdn-tE-Mpl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="email" destination="1Mg-a7-F0S" id="NWu-kY-MF8"/>
                         <outlet property="interval" destination="BuI-uU-7IX" id="BVb-rV-RuT"/>
                         <outlet property="intervalText" destination="1ab-Wt-oK3" id="DzZ-go-4vi"/>
                         <outlet property="isUpdate" destination="ZnP-YF-YeE" id="dvQ-lH-Cfm"/>
                         <outlet property="isUpdateText" destination="pZG-cp-Kq3" id="V7P-xe-gDk"/>
+                        <segue destination="9M2-DY-IWc" kind="show" identifier="ManualSubmit" id="0J6-6v-bBC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -157,6 +156,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Ggf-84-Bfc"/>
                     </view>
+                    <navigationItem key="navigationItem" id="2nI-y9-21o"/>
                     <connections>
                         <outlet property="resultEmail" destination="j8R-wR-xzy" id="hPz-NE-zNR"/>
                         <outlet property="resultInterval" destination="B1L-at-bcb" id="4SG-Lw-pXz"/>
@@ -165,7 +165,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ljB-ss-nLU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1765.5999999999999" y="111.57635467980296"/>
+            <point key="canvasLocation" x="1974" y="112"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QIm-Yg-oxo">
