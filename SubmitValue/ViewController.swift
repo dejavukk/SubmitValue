@@ -43,7 +43,7 @@ class ViewController: UIViewController {
     @IBAction func onStepper(_ sender: UIStepper) {
         
         // 강제 캐스팅
-        //let obj = sender as! UIStepper
+        // let obj = sender as! UIStepper
         
         let value = Int(sender.value)
         self.intervalText.text = "\(value)분 마다."
@@ -59,6 +59,13 @@ class ViewController: UIViewController {
         }
         
         // 값을 전달하는 과정을 작성.
+        rvc.paramEamil = self.email.text! // 이메일
+        rvc.paramUpdate = self.isUpdate.isOn // 자동갱신 여부
+        rvc.paramInterval = self.interval.value // 갱신주기
+        
+        // 화면이동
+        self.present(rvc, animated: true)
+        
     }
     
     
